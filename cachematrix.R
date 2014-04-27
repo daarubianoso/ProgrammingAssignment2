@@ -1,5 +1,5 @@
-
-
+##se toma una funcion de tipo numerica
+## la funcion es de tipo numerica
 makeCacheMatrix <- function(x = numeric()) {
         m <- NULL
         set <- function(y) {
@@ -15,7 +15,7 @@ makeCacheMatrix <- function(x = numeric()) {
 }
 
 
-
+## esta funcion retornara una lista con 4 valores
 
 cacheSolve <- function(x, ...) {
         
