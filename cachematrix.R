@@ -1,5 +1,8 @@
-##se toma una funcion de tipo numerica
-## la funcion es de tipo numerica
+## la funcion devuelve la inversa de una matriz
+
+## para que se devuelve la inversa, la matriz ingresada debe ser cuadrada
+
+##esta primera parte guarda la matriz inversa en el cache
 makeCacheMatrix <- function(x = numeric()) {
         m <- NULL
         set <- function(y) {
@@ -14,9 +17,16 @@ makeCacheMatrix <- function(x = numeric()) {
              getinv = getinv)
 }
 
-
-## esta funcion retornara una lista con 4 valores
-
+## esta segunda parte calcula inversa de la matriz anteriormente guardada
 cacheSolve <- function(x, ...) {
-        
+        m <- x$getinv()
+        if(!is.null(m)) {
+                message("getting cached data")
+                return(m)
+        }
+        data <- x$get()
+        m <- solve(data, ...)
+        x$setinv(m)
+        m
 }
+
